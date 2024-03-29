@@ -1,0 +1,8 @@
+javaWorkspace/.metadata/
+*.classpath
+*.project
+/bin/
+bin/
+.settings/
+module-info.java
+.metadata/
