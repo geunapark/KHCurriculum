@@ -1,0 +1,43 @@
+h1{
+  background-color: pink;
+}
+input[type = "text"]{
+  background-color: pink;
+}
+input[name ="userPwd"]{
+  background-color: white;
+}
+#userPwdLable{
+  color: palevioletred;
+}
+#test01{
+  border: 5px solid pink;
+}
+#test01 > h4{
+  color: rgb(23, 205, 159);
+}
+#test01 >ul > li{
+  color: blue;
+}
+#target ~ div {
+  color: blue;
+}
+#hover-test:hover{
+  background-color: rgb(0, 150, 27);
+}
+#active-test:active{
+  background-color: aqua;
+}
+
+input[type="checkbox"]:checked{
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+}
+#btn01:focus{
+  background-color: yellowgreen;
+}
+
+input[type="button"]:disabled{
+  background-color: violet;
+}
