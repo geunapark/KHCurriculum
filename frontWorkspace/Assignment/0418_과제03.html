@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #word{
+      font-weight: 700;
+    }
+    #title{
+      width: 300px;
+    }
+    #qr{
+      width: 300px;
+      height: 180px;
+    }
+    #title, #qr, input[type="file"] {
+     margin-bottom: 10px; 
+    }
+    #button{
+      width: 110px;
+      margin-left: 120px;
+    }
+    #title{
+      font-weight: lighter;
+    }
+    #word{
+      font-weight: 700;
+    }
+    #title{
+      width: 300px;
+    }
+    #qr{
+      width: 300px;
+      height: 180px;
+    }
+    #title, #qr, input[type="file"] {
+     margin-bottom: 10px; 
+    }
+    #button{
+      width: 110px;
+      margin-left: 120px;
+    }
+    #title{
+      font-weight: lighter;
+    }
+    .grid-table{
+      display: grid;
+      grid-template-columns:0.5fr 4fr 0.7fr 1fr 1fr 0.7fr;
+      margin:auto;
+    }
+    .grid-header, .grid-footer, .grid-item {
+      border: 1px solid black;
+      padding: 5px;
+    }
+    .grid-header, .grid-footer {
+      background-color: black;
+      color: white; /* 흰색 텍스트로 변경 */
+    }
+    .grid-item {
+      color: black; /* 검정색 텍스트로 변경 */
+    }
+    .grid-footer {
+      border-top: none; /* 겹치는 줄 제거 */
+    }
+    /* 바로가기 버튼 스타일 */
+    .grid-table button {
+      width: calc(100% - 10px); /* 버튼이 셀 내부에 딱 맞도록 조정 (패딩 고려) */
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div>
+    <div>
+      <fieldset>
+        <legend id="title2" id="word">공지사항 작성하기</legend>
+        <div>
+          <span  id="word">제목</span>
+          <input type="text" id="title" placeholder="제목을 입력하시오.">
+        </div>
+        <div>
+          <span id="word" >내용</span>
+          <input type="text" id="qr" placeholder="내용을 입력하시오.">
+        </div>
+        <div>
+          <span id="word"></span>
+          <input type="file">
+        </div>
+        <div>
+          <button id="button">작성하기</button>
+        </div>
+      </fieldset>
+      </div>
+        
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div class="center">
+    <div class="grid-table">
+
+      <div class="grid-header">번호</div>
+      <div class="grid-header" style="grid-column: span 2;">제목</div>
+      <div class="grid-header">작성자</div>
+      <div class="grid-header">작성명</div>
+      <div class="grid-header">조회수</div>
+
+      <div class="grid-item">9</div>
+      <div class="grid-item">공지사항 제목 9</div>
+      <div class="grid-item" style="padding: 0;"><button style="width: 100%;">바로가기</button></div>
+      <div class="grid-item">uesr01</div>
+      <div class="grid-item">2021-03-29</div>
+      <div class="grid-item">34</div>
+
+      <div class="grid-item">6</div>
+      <div class="grid-item">공지사항 제목 6</div>
+      <div class="grid-item" style="padding: 0;"><button style="width: 100%;">바로가기</button></div>
+      <div class="grid-item">answ445</div>
+      <div class="grid-item">2021-03-12</div>
+      <div class="grid-item">67</div>
+     
+      <div class="grid-item">3</div>
+      <div class="grid-item">공지사항 제목 3</div>
+      <div class="grid-item" style="padding: 0;"><button style="width: 100%;">바로가기</button></div>
+      <div class="grid-item">testg12</div>
+      <div class="grid-item">2021-03-01</div>
+      <div class="grid-item">98</div>
+     
+      <div class="grid-item">9</div>
+      <div class="grid-item">공지사항 제목 2</div>
+      <div class="grid-item" style="padding: 0;"><button style="width: 100%;">바로가기</button></div>
+      <div class="grid-item">palew3</div>
+      <div class="grid-item">2021-01-02</div>
+      <div class="grid-item">85</div>
+    
+    
+    </div>   
+  </div>
+
+</body>
+</html>

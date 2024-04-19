@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  body{
+    background-color:  #deebf7;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 수평 방향 가운데 정렬 */
+  justify-content: center; /* 수직 방향 가운데 정렬 */
+  width: 540px;
+  height: 440px;
+  border: 1px solid rgb(135, 135, 135);
+  background-color: #ededed;
+}
+  input[type="text"], input[type="password"]{
+    border-style:none none dashed none;
+    border-width: 2px;
+    background-color: #ededed;;
+    border-color: black;
+    margin-top: 20px;
+  }
+  #password-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .required-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  button{
+    height: 50px;
+    width: 520px;
+    background-color: lightgreen;
+    border: 1px solid lightgrey;
+    margin-top: 130px;
+    flex-grow: 3fr;
+  }
+  #id01{
+    flex-grow: 3fr;
+    
+  }
+  #pwd01{
+    flex-grow: 3fr;
+  }
+  #pwd03{
+    flex-grow: 3fr;
+  }
+  #email01{
+    flex-grow: 3fr;
+  }
+  #ad01{
+    flex-grow: 3fr;
+  }
+</style>
+</head>
+<body>
+<br>
+<br><br>
+<div class="flex">
+  <div class="box">
+    <div id="id01"><span>아이디</span> <input type="text" id="username"></div>
+    <div id="required-username-message" class="required-message"></div>
+    <div id="pwd01"><span>패스워드</span> <input type="password" id="password"></div>
+    <div id="password-message"></div>
+    <div id="required-password-message" class="required-message"></div>
+    <div id="pwd03"><span>패스워드 확인</span> <input type="password" id="confirm-password"></div>
+    <div id="required-confirm-password-message" class="required-message"></div>
+    <div id="email01"><span>이메일</span><input type="text" id="email"><span>@</span><input type="text" ></div>
+    <div id="ad01"><span>주소</span><input type="text" id="address"></div>
+    <div><button onclick="submitForm()">가입</button></div>
+  </div>
+</div>
+
+<script>
+document.getElementById("password").addEventListener("focus", function() {
+  var message = "영문자 대/소문자, 특수문자, 숫자를 포함하여 8~32자 이내로 입력해주세요.";
+  document.getElementById("password-message").innerText = message;
+  document.getElementById("password-message").style.color = "red";
+  document.getElementById("password-message").style.fontSize = "12px";
+});
+
+document.getElementById("password").addEventListener("blur", function() {
+  document.getElementById("password-message").innerText = "";
+});
+
+document.getElementById("username").addEventListener("blur", function() {
+  var username = document.getElementById("username").value;
+  if (username === "") {
+    document.getElementById("required-username-message").innerText = "필수 입력 항목입니다.";
+  } else {
+    document.getElementById("required-username-message").innerText = "";
+  }
+});
+
+document.getElementById("password").addEventListener("blur", function() {
+  var password = document.getElementById("password").value;
+  if (password === "") {
+    document.getElementById("required-password-message").innerText = "필수 입력 항목입니다.";
+  } else {
+    document.getElementById("required-password-message").innerText = "";
+  }
+});
+
+document.getElementById("confirm-password").addEventListener("blur", function() {
+  var confirmPassword = document.getElementById("confirm-password").value;
+  if (confirmPassword === "") {
+    document.getElementById("required-confirm-password-message").innerText = "필수 입력 항목입니다.";
+  } else {
+    document.getElementById("required-confirm-password-message").innerText = "";
+  }
+});
+
+document.getElementById("email").addEventListener("blur", function() {
+  var email = document.getElementById("email").value;
+  if (email === "") {
+    document.getElementById("required-email-message").innerText = "필수 입력 항목입니다.";
+  } else {
+    document.getElementById("required-email-message").innerText = "";
+  }
+});
+
+document.getElementById("address").addEventListener("blur", function() {
+  var address = document.getElementById("address").value;
+  if (address === "") {
+    document.getElementById("required-address-message").innerText = "필수 입력 항목입니다.";
+  } else {
+    document.getElementById("required-address-message").innerText = "";
+  }
+});
+
+function submitForm() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirm-password").value;
+
+  if (username === "" || password === "" || confirmPassword === "") {
+    document.getElementById("required-username-message").innerText = "필수 입력 항목입니다.";
+    document.getElementById("required-password-message").innerText = "필수 입력 항목입니다.";
+    document.getElementById("required-confirm-password-message").innerText = "필수 입력 항목입니다.";
+    
+   
+    event.preventDefault();
+    
+   
+    document.getElementById("submit-button").focus();
+    
+    return;
+  }
+
+  alert('가입 버튼이 클릭되었습니다!');
+}
+</script>
+
+</body>
+</html>
