@@ -1,0 +1,23 @@
+#calcWrap{
+  width: 300px;
+  height: 400px;
+  border: 3px solid black;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns:repeat(4 ,1fr);
+  /*1fr 4개일때 repeat(4 , 1fr) 가능*/
+  grid-template-rows: repeat(6 , 1fr);
+  grid-gap: 10px 10px;
+
+
+}
+
+#displayNumber{
+  font-size:3em;
+  grid-column: span 4;
+  background-color: lightpink;
+
+  display: flex;
+  justify-content: end;
+}
