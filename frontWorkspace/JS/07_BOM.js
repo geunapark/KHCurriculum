@@ -1,44 +1,48 @@
-function openTest() {
- 
-  window.open("https://www.naver.com" , "abc" , "width=500 ,height=500, resizable=no, right=500");
-  
-  
+function openTest(){
+   const x =window.open("https://www.naver.com", "abc","width=500,height=500,resizable=no ,left=500,top=500");
+   
 }
 
-// const helloWorld =() =>{
-//   alert("hello~")
-// }
-// const helloWorld = function() {
-//   alert("hello~")
-// }
+const helloWorld =() =>  {
+    alert("hello~~!");
+} 
 
 function timeoutTest() {
-  timr01 = setTimeout( () => {
-  alert("hello");
-} , 3000);
-  
+ timer01 =setTimeout(
+    //익명함수 이용
+  () => {
+        alert("hello");
+    },3000);//몇초뒤에 머해라 이런거 수행  
+
+
 }
 function intervalTest() {
-  timr02 = setInterval( () => {
-  console.log("2초 지남,,,,");
- } , 2000)
+    timer02 =setInterval(() => {
+        console.log("2초 지남...");
+    }, 
+        2000);
 }
 
 function clearTimeoutTest() {
-  clearTimeout(timr01);
+    clearTimeout(timer01);
+}
+function clearInterValTest() {
+    clearInterval(timer02);
 }
 
-function clearIntervalTest() {
-  clearInterval(timr02);
+function locationTest() {
+    console.log(locationTest.href);
 }
 
-function locationTest(){
-  location.reload();
+function locationTest() {
+   // location.href="http://naver.com";
+    location.reload();
 }
 
 function navigatorTest() {
-  console.log(navigator);
+    console.log(navigator);
 }
+
 function screenTest() {
-  console.log(screen);
+    console.log(screen);
 }

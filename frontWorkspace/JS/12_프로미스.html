@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로미스나인~</title>
+</head>
+<body>
+
+    <h1>프로미스¯\_(ツ)_/¯</h1>
+    
+</body>
+</html>
+
+<script>
+    //프로미스란 new Promise(); 객체이다 
+    //근아야 너가했던 new Date 같은거야
+
+    new Promise((x,y)=>{
+        console.log("프로미스나인~");
+        y("에러다");
+    })
+    .then(()=>{console.log("성공~~~~");})
+    .catch((str)=>{console.log("실패 ㅜㅜㅜ");
+        console.log(str);
+    })
+    ;
+
+</script>

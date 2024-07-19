@@ -1,107 +1,149 @@
 .box{
-  width: 100px;
-  height: 100px;
-  background-color: pink;
-  border: 1px solid hotpink;
+    width: 100px;
+    height: 100px;
+    background-color: lightgrey;
+    border: 1px solid black;
+
+
 }
 
+#target{
+    /* transform: translateX(300px); */
+    /* transition:all 2s 1s cubic-bezier(); */
+    /* transition-property: all; 프로퍼티 적용대상 
+    transition-duration: 1500ms; 몇초에 걸쳐서 할건지
+    transition-delay: 1s; 딜레이는 처음에 마우스 움직이자마자 하는게아니라
+    그후에 하고 싶을때 ㅡ쓰는거 임
+    transition-timing-function: cubic-bezier(); 
+    타이밍 펀션은 
+transition-timing-function 속성은 CSS 전환의 타이밍 함수를 지정하는 데 사용됩니다. 이 함수는 전환하는 동안 속도의 변화를 제어하여 애니메이션의 속도 곡선을 조절합니다.
+
+"cubic-bezier()" 함수는 사용자 정의 타이밍 함수를 지정할 때 사용됩니다. 이 함수는 네 개의 값을 가집니다: cubic-bezier(x1, y1, x2, y2). 여기서 각 값은 0에서 1 사이의 범위입니다.
+
+(x1, y1): 시작 지점의 점을 나타내는 베지어 커브의 제어점입니다.
+(x2, y2): 끝 지점의 점을 나타내는 베지어 커브의 제어점입니다.
+이러한 제어점을 이용하여 속도 곡선을 정의할 수 있습니다. 일반적으로 일정한 가속도와 감속도를 갖는 "ease"나 빠르게 가속하는 "ease-in"과 같은 사전 정의된 키워드를 사용할 수도 있습니다.
+
+예를 들어, "transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);"은 일정한 가속도와 감속도를 갖는 타이밍 함수를 지정합니다. 이 함수는 전환의 시작부터 끝까지 일정한 속도로 진행됩니다.*/
+
+/* transition-duration: 2s;
+transition-delay:1s;
+transition-timing-function: cubic-bezier(.22,.71,.46,-0.89); */
+
+
+
+animation-name: hello2;
+animation-duration: 3s;
+animation-delay: 2s;
+animation-timing-function: linear;
+animation-iteration-count: 0;
+animation-direction:normal;
+animation-fill-mode:both;
+animation-play-state: running;
+
+}
 #target:hover{
-  /* transform: translateX(300px); */
-
-  
-  /* transition-property: all;
-  transition-duration: 2s; 몇초에 걸쳐서 할건지
-  transition-delay: 1s; 몇초후에 작동할건지
-  transition-timig-function: 2s; */
-
-
-  /* transition: all 2s 1s cubic-bezier(); */
-  /* transition-duration: 2s;
-  transition-delay:1s;
-  transition-timing-function: cubic-bezier(.22,.71,.46,-0.89);  
-   */
-
-   animation-name: hello;
-  animation-duration: 3s;
-  animation-delay: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: 50;
-  animation-direction: normal;
-  animation-fill-mode: both;
-  animation-play-state: running;
-  /*both 애니메이션 끝나고 나서도 유지 처음 시작할때부터 시작*/
-
-}
-
-:target:hover{
-  animation-play-state: paused;
-}
-
-
-@keyframes hello{
-  0%{
-      background-color: lightyellow;
-      width: 300px;
-      height: 300px;
-  }
-  50%{
-      background-color: lightskyblue;
-      width: 100px;
-      height: 100px;
-
-  }
-  100% {
-      background-color: lightpink;
-      width: 200px;
-      height: 200px;
-
-  }
-}
-
-  #t{
-    animation-name: abc;
-    animation-duration: 2s;
-  }
-
-  t:hover{
     animation-play-state: paused;
-  }
-@keyframes abc {
-  0%{
- 
-  }
-  
-  100%{
-    transform: rotateZ(360deg);
-  }
-  
 }
- 
+
+@keyframes hello {
+    0%{
+        background-color: red;
+        width: 300px;
+        height: 300px;
+    }
+    50%{
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+
+    }
+    100% {
+        background-color: green;
+        width: 200px;
+        height: 200px;
+
+    }
+}
+
+#t{
+    animation-name: abc;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#t:hover{
+    animation-play-state:paused ;
+}
+@keyframes abc{
+  0%{
+
+  }
+  100%{
+    transform: rotateZ(100deg);
+  }
+}
+
 .btn-jelly:hover{
-  background-color: violet;
-  border-radius: 10px;
-  border-width: 0px;
-
-  animation-name:jelly;
-  animation-duration: 0.5;
-  animation-iteration-count: 5;
+    background-color: violet;
+    border-radius: 10px;
+    border-width: 0px;
+    animation-name:jelly;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
 }
 
-@keyframes jelly {
-  0%{
-    background-color: rgb(213, 109, 254);
-    transform: scale(0.8,1.2);
+@keyframes jelly{
+    0%{
+        background-color: aqua;
+        transform: scale(0.8,1.2);
+    }
+    50%{
+     background-color: aquamarine;
+     transform: scale(1.2,0.9);
+    }
+    100%{
+        background-color: rgb(41, 38, 116)
+      
+    }
   }
-  50%{
-    background-color: rgb(181, 255, 44);
-    transform: scale(1.2,0.9);
-  }
-  100%{
-    background-color: lightblue;
-    transform: scale(0.5,1.3);
-  }
-}
 
-#back-v:hover{
+  #back-v:hover{
+    transform:rotateX(180deg) ;
+    transition: 2s;
+    backface-visibility: hidden;
+  }
+
+  #card{
+    width: 80px;
+    height:100px;
+    border:5px solid black;
+    box-sizing:border-box;
+    margin: 50px;
+    position: relative;
+  }
+  #card > div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+  }
+  #card:hover > div {
   transform: rotateX(180deg);
-}
+
+
+  }
+ 
+
+  #front{
+    background-color: red;
+    backface-visibility: hidden;
+  }
+  #back{
+    background-color: blue;
+    z-index: -1;
+    /* transform: rotate(180deg);
+    backface-visibility: hidden; */
+
+  }

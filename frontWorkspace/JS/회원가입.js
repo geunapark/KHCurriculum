@@ -1,17 +1,20 @@
-function checkDup() {
-const idTag =document.querySelector("input[name=memberId]")
-  if(idTag.value == "admin"){
-    alert("관리자 사칭 하지마 쉐키야")
-    idTag.value="";
-  }
-}
+const pwdTag = document.querySelector("input[type=password]");
+pwdTag.addEventListener("click",function (){
+   const pwdText =document.querySelector("#pwdText");
+   pwdText.classList.add("active");
+});
+
+pwdTag.addEventListener("blur",function(){
+    const pwdText =document.querySelector("#pwdText");
+    pwdText.classList.remove("active");
+});
 
 
-const pwdTag = document.querySelector("input[name=memberPwd]")
-pwdTag.addEventListener('focus' , f01)
 
-function f01() {
-  const target = document.querySelector("#target");
-  target.innerText = "비밀번호는 8글자 이상 20글자 이하"
-  // alert("비밀번호는 8글자 이상 20글자 이하");
-}
+const pwdCheckTag = document.querySelector("input[name=pwdCheck]");
+pwdCheckTag.addEventListener("focus",function (){
+    const pwdCheckText =document.querySelector("#pwdCheckText");
+   pwdCheckText.classList.add("active");
+});
+
+//탭을 이용해서 하는걸 포커스에 해당함 

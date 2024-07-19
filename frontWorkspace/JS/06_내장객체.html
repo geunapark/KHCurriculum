@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내장객체</title>
-  <script src="./06_내장객체.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체</title>
+    <script src="./06_내장객체.js"></script>
 </head>
 <body>
-  <h1>내장객체</h1>
+    <h1>내장객체</h1>
 
-  <div id="div-time"></div>
-  <button onclick="showCurrentTime();">현재 시각 확인</button>
+    <div id ="div-time"></div>
+    <button onclick="shortCurrentTime();">현재 시각 확인</button>
+    
 
-  <h2>Object</h2>
-  <pre>
-    객체.hasOwnProperty("프로퍼티 키")
-    :객체가 해당 프로퍼티 키를 가지고 있는지 확인
+    <h2>Object</h2>
+    <pre>
+        객체.hasOwnProperty("프로퍼티 키")
+        :  객체가 해당 프로퍼티 키를 가지고 있는지 확인하고
 
-    객체 instanceof 타입
-    :객체의 타입 확인
-  </pre>
+        객체 instanceOf 타입 
+        :  객체가 타입 확인
+    </pre>
 
-  <h2>Number</h2>
-  <pre>
-    toExponential()
-    toPrecision()
-    toFixed()
-  </pre>
+    <h2>Number</h2>
+    <pre>
+        toExponential()
+        toPrecision()
+        toFixed()
+        몰라도 상관없음 자릿수 지정
+        toExponential():
 
-  <h2>String</h2>
-  <pre>
-    bold()
-    italics()
-    fontcolor()
-    link()
-    화면에 보이는 요소 디브나 스팬 화면에 다룰때 사용
-  </pre>
-  <h2>Date</h2>
-  <pre>
-    날짜 , 시간다루는 객체
-  </pre>
+이 메서드는 숫자를 지수 표기법으로 변환하여 문자열로 반환합니다.
+이 메서드는 두 가지 매개변수를 가질 수 있습니다:
+toExponential(fractionDigits): 숫자를 표시할 소수 자릿수를 나타내는 정수를 받아들입니다. 소수 자릿수를 지정하지 않으면 기본값인 0이 사용됩니다.
+toExponential(): 소수 자릿수를 지정하지 않고 호출하면, 숫자의 지수 표기법을 반환합니다.
+toPrecision():
 
+이 메서드는 숫자를 주어진 길이로 나타내는 문자열을 반환합니다.
+이 메서드는 하나의 매개변수를 가집니다:
+toPrecision(precision): 숫자를 나타낼 전체 길이를 나타내는 정수를 받아들입니다. 소수점을 포함한 모든 숫자의 길이를 의미합니다.
+toFixed():
+
+이 메서드는 숫자를 고정 소수점 표기법으로 변환하여 문자열로 반환합니다.
+이 메서드는 하나의 매개변수를 가집니다:
+toFixed(digits): 소수점 이하 자릿수를 나타내는 정수를 받아들입니다. 소수점 이하의 숫자가 해당 자릿수로 반올림됩니다.
+    </pre>
+    <h2>String</h2>
+    <pre>
+        bold()
+        italics()
+        fontcolor()
+        link()
+        화면에 보이는 요소 디브나 스팬 화면에 다룰떄 사용
+    </pre>
+    <h2>Date</h2>
+    <pre>
+        날짜 , 시간 다루는 객체 
+    </pre>
 </body>
 </html>

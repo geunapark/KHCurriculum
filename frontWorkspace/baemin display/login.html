@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./test01.css">
+
+</head>
+<style>
+    /* 기본 CSS 리셋 */
+body , h1, h2, h3 {
+  margin: 0;
+}
+
+
+body {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main{
+  width: 30vw;
+  height: 100vh;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 3fr 4fr 1fr 2fr 4fr;
+  grid-template-columns: 1fr;
+}
+
+#logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo > img {
+  margin-top: 10%;
+}
+
+#login{
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+#login > div:nth-child(1){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#div-id, #div-pwd {
+  border: 1px solid rgb(201, 198, 198);
+  width: 80%;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login input {
+  border: 0px;
+  width: 80%;
+  height: 60%;
+}
+
+#div-id{
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 0px;
+}
+
+#div-pwd{
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+#login input[type=checkbox]{
+  width: 15px;
+  height: 15px;
+}
+
+#login-btn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-btn-wrap > button{
+  width: 90%;
+  height: 80%;
+  color: white;
+  background-color: #03c75a;
+  font-weight: 900;
+  font-size: 1.5em;
+  border: 0px;
+  border-radius: 8px;
+}
+
+#menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu > span {
+  font-size: 0.8em;
+  color: rgb(151, 151, 151);
+}
+
+#ad-img-area{
+  width: 100%;
+  height: 100%;
+  background-image: url("../resources/img/abc3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+</style>
+<body>
+
+  <div id="main">
+    <div id="logo"><img width="70%" height="30%" src="../resources/img/logo.png" alt="홈페이지로고.멋있는로고."></div>
+    
+    <div id="login">
+      <div>
+        <div id="div-id">
+          <span>😊</span>
+          <input type="text" name="memberId" placeholder="아이디">
+        </div>
+        <div id="div-pwd">
+          <span>🤦‍♂️</span>
+          <input type="password" name="memberPwd" placeholder="비밀번호">
+        </div>
+      </div>
+      <div>
+        <label><input type="checkbox">로그인 상태 유지</label>
+      </div>
+      <div id="login-btn-wrap">
+        <button>로그인</button>
+      </div>
+    </div>
+
+    <div id="menu">
+      <span>비밀번호 찾기 | 아이디 찾기 | 회원가입</span>
+    </div>
+    <div id="ad">
+      <a href="https://www.google.com">
+        <div id="ad-img-area"></div>
+      </a>
+    </div>
+    <div id="footer">푸터</div>
+  </div>
+
+</body>
+</html>

@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOM</title>
-  <script src="./07_BOM.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./07_BOM.js"></script>
+    <title>BOM</title>
+    
 </head>
 <body>
-  <h1>Browser Object Model</h1>
-  <pre>
-    window 객체는 자바스크립트의 최상위 객체이며, 브라우저 내의 모든 요소들과 객체를 포함한다. <br>
-        BOM : location 객체, navigator 객체, history 객체, screen 객체 <br>
-        DOM : document 객체
-  </pre>
+    <h1>Browser Object Model</h1>
+    <pre>
+        window 객체는 자바스크립트의 최상위 객체이며, 브라우저 내의 모든 요소들과 객체를 포함한다. <br>
+            BOM : location 객체, navigator 객체, history 객체, screen 객체 <br>
+            DOM : document 객체
+      </pre>
+    <hr>
 
-  <hr>
+    <h2>window</h2>
+    <button onclick="openTest();">open 테스트</button>
+    <br>
+    <button onclick="timeoutTest();">timeout 테스트</button>
+    <button onclick="intervalTest();">interval 테스트</button>
+    <br>
+    <button onclick="clearTimeout();">clearTimeout 테스트</button>
+    <button onclick="clearIntervalTest();">clearIntervalTest 테스트</button>
+    <pre>
+        open()
+        setTimeout()
+        setInterVal()
+    </pre>
 
-  <h2>window</h2>
-  <button onclick="openTest();">오픈테스트</button>
-  <br>
-  <button onclick="timeoutTest();">timeout 테스트</button>
-  <button onclick="intervalTest()">interval 테스트</button>
-  <br>
-  <button onclick="clearTimeoutTest();">clear timeout 테스트</button>
-  <button onclick="clearIntervalTest();">clear interval 테스트</button>
-  <pre>
-    open()
-    setTimeout()
-    setInterval()
-  </pre>
+    <h2>BOM</h2>
+    <button onclick="locationTest();">locationTest~~!!</button>
+    <button onclick="navigatorTest();">navi</button>
+    <button onclick="screenTest();">screen</button>
 
-  <h2>BOM</h2>
-  <button onclick="locationTest();">locationTest테스트~</button>
-  <button onclick="navigatorTest();">navigator 테스트</button>
-  <button onclick="screenTest();">screen 테스트</button>
-  <pre>
-    location.reload()
-    location.href()
-    location.assign()
-    location.replace()   //history기록 안함
+    <pre>
+        location.reload()
+        location.href()
+        location.assign()
+        location.replace() //history 기록 안함
 
+        history ,back()
+        history.forward()
+        history.go()
 
-    history.back()
-    history.forward()
-    history.go()
-
-    navigator
-
-    screen
-
-  </pre>
-
+        navigator: 
+        
+        screen
+    </pre>
 </body>
 </html>

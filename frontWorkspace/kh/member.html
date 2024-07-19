@@ -6,9 +6,43 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>회원가입</h1>
-  <h1>로그인이다 븅신아~</h1>
+  <h1>회원가입 , 로그인</h1>
 
-  <a href="http://192.168.40.106:5500/kh/home.html">홈페이지로 돌아가깅~</a>
+  <a href="http://192.168.40.109:5500/kh/home.html">홈페이지로 돌아가기</a>
+  <h3>회원가입</h3>
+
+    <form>
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+
+            <table>
+                <tr>
+                    <th><label for="userId">ID</label></th>
+                    <td><input type="text" size="30" name="userId" id="userId" placeholder="아이디 10글자 이내"></td>
+                    <td><button>중복확인</button></td>
+                </tr>
+                <tr>
+                    <th><label for="userPwd">비밀번호</label></th>
+                    <td colspan="2"><input type="password" size="30" name="userPwd" id="userPwd" placeholder="영문, 숫자, 특수문자 포함 8자 이상"></td>
+                </tr>
+                <tr>
+                    <th><label for="userPwd2">비밀번호 확인</label></th>
+                    <td colspan="2"><input type="password" size="30" name="userPwd2" id="userPwd2"></td>
+                </tr>
+                <tr>
+                    <th><label for="email">Email</label></th>
+                    <td><input type="email" size="30" name="email" id="email"></td>
+                    <td>
+                        <select name="emailAddress">
+                            <option value="etc" label="직접입력" selected></option>
+                            <option value="naver" label="naver.com"></option>
+                            <option value="gmail" label="gmail.com"></option>
+                            <option value="daum" label="daum.net"></option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
 </body>
 </html>

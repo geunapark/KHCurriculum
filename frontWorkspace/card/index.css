@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    
+    grid-template-columns:  repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card{
+    width: 60%;
+    height: 80%;
+    border: 2px solid black;
+}
+/* .outer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(1, 4fr);
+} */
+
+.card.hide{
+    visibility: hidden;
+}

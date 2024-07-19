@@ -28,10 +28,30 @@
    
     <button onclick="arrayTest1();"> 전송 및 처리 </button>
 
+   
     <script>
         function arrayTest1() {
-          
-            
+            // 배열 데이터들
+            const arrays = [
+                document.getElementById("la1").innerText.split(','),
+                document.getElementById("la2").innerText.split(','),
+                document.getElementById("la3").innerText.split(','),
+                document.getElementById("la4").innerText.split(',')
+            ];
+
+            // 입력된 문자열
+            const searchText = document.getElementById("text").value;
+
+            // 배열 데이터들을 하나의 배열로 합침
+            const mergedArray = arrays.reduce((acc, cur) => acc.concat(cur), []);
+
+            // 입력된 문자열이 있는지 확인하고 위치를 알려줌
+            const index = mergedArray.indexOf(searchText);
+            if (index !== -1) {
+                alert(`입력된 문자열은 배열의 ${index + 1}번째 위치에 있습니다.`);
+            } else {
+                alert("존재하지 않습니다.");
+            }
         }
     </script>
     

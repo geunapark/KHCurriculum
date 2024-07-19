@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>form 태그</title>
 </head>
 <body>
-  <h1>FORM 태그</h1>
   
-<!--  
+  <h1>form 태그</h1>
+
+       <!--  
         <form> 태그
             form 태그는 html에서 사용자가 입력할 수 있는 양식을 제공하는 태그이다.
             form 태그 내의 <input> 태그들을 통해서 사용자가 입력한 정보를 서버로 넘기면서 요청하는 역할을 한다.
@@ -22,48 +23,44 @@
             
     -->
 
-  <form action="/helloworld" method="post">
-    <input type = "text" name="userID" value="user01">
-    <input type="submit" value="클릭">
-  </form>
+    <form  action = "/helloworld" method="get">
+        <input type="text" name="userId" value ="user01">
+        <input type="submit" value="검색버튼">
+    </form>
 
-  <!-- 
-    form 
-      action
-      method
+    <!-- 
+        form
+         action
+         method 
+        input 
+         submit
+         reset
+         text
+         password
+         number
+         search
+         email
+         tel
+         url
+         date
+         week
+         time
+         datetime-local
+         button
+         radio
+         checkbox
+         color
+         file
+         hidden
 
-    input
-      submit
-      reset 
-      text
-      password
-      number
-      search
-      email
-      tel
-      url
-      date
-      week
-      time
-      datetime-local
-      button
-      radio
-      checkbox
-      color
-      file
-      hiden
+        select 
+         option
+         
+        textarea 
 
-    select
-      option
-    
-    textarea
+        meter
 
-    meter
-
-    progress
-  -->
-
-
-
+        progress
+     -->
 </body>
 </html>

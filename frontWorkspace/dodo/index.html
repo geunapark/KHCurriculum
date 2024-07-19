@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+</head>
+<body>
+    
+    <h1>TODO APP</h1>
+
+    <input type="text" name="content" id="content">
+    <button onclick="insert()">할 일 등록</button>
+
+    <hr>
+
+    <input type="text" name="no" id="detail">
+    <button onclick="getTodoByNo()">상세조회</button>
+    
+    <hr>
+
+    <button onclick="load()">할일 불러오기</button>
+    <div id="load"></div>
+
+    <hr>
+
+    <div id="let"></div>
+
+    <div style="display: none;" id="editContent">
+        <input type="text" id="editInput">
+        <button onclick="saveEdit()">저장하기</button>
+    </div>
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+
+<script>
+    
+    function insert() {
+        const content = document.querySelector("#content").value;
+        document.querySelector("#content").value = "";
+        
+        $.ajax({
+            url:"http://127.0.0.1:8080/todo",
+            method:"post",
+            data:{
+                content: content
+            },
+            success: (x)=>{
+                alert("작성성공~");
+                console.log(x);
+            },
+            error:()=>{
+                alert("작성 실패");
+            }
+        });
+    }
+    
+    function load() {
+        const result = document.querySelector("#load");
+        
+        $.ajax({
+            url:"http://127.0.0.1:8080/todo",
+            method:"get",
+            data : {},
+            success:(data)=>{
+                let str ="";
+                
+                for(let i = 0; i < data.length; i++){
+                    str += "<div>" + data[i].no + "/" + data[i].content + "</div>";
+                }
+                
+                result.innerHTML = str;
+            },
+            error:(x)=>{
+                alert("불러오기 실패");
+            }
+        });
+    }
+    
+    function getTodoByNo() {
+        const noTag = document.querySelector("#detail");
+        const no = noTag.value;
+        const result = document.querySelector("#let");
+        
+        console.log(no);
+        console.log("연결성공");
+        
+        $.ajax({
+            url:"http://127.0.0.1:8080/todo/detail",
+            method:"get",
+            data:{
+                no: no
+            },
+            success:(data)=>{
+                let str = "";
+                str += "<h2>상세조회</h2>";
+                str += "<div>" + data.no + "</div>";
+                str += "<div>" + data.content + "</div>";
+                str += `<button onclick="showEditContent(${data.no}, '${data.content}')">수정하기</button>`;
+                str += `<button onclick="noDelete(${data.no})">삭제하기</button>`;
+                
+                result.innerHTML = str;
+            },
+            error:()=>{
+                alert("상세 조회 실패");
+            }
+        });
+    }
+    
+    function showEditContent(no, content) {
+        const editContentDiv = document.getElementById("editContent");
+        const editInput = document.getElementById("editInput");
+        
+        
+        editInput.value = content;
+        
+        
+        const saveButton = editContentDiv.querySelector("button");
+        saveButton.onclick = function() {
+            saveEdit(no);
+        };
+        
+        
+        editContentDiv.style.display = "block";
+    }
+    
+    function saveEdit(no) {
+        const editInput = document.getElementById("editInput");
+        const newContent = editInput.value;
+        
+        $.ajax({
+            url: "http://127.0.0.1:8080/todo",
+            method: "put",
+            data: {
+                no: no,
+                content: newContent
+            },
+            success: () => {
+                alert("수정 성공");
+                document.getElementById("editContent").style.display = "none";
+                getTodoByNo(); 
+            },
+            error: () => {
+                alert("수정 실패");
+            }
+        });
+    }
+    
+    function noDelete(no) {
+        $.ajax({
+            url: "http://127.0.0.1:8080/todo",
+            method: "delete",
+            data: {
+                no: no
+            },
+            success: () => {
+                alert("삭제 성공");
+            },
+            error: () => {
+                alert("삭제 실패");
+            }
+        });
+    }
+</script>
+
+<script>
+load();
+</script>

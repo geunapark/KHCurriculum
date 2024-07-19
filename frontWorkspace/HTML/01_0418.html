@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>그리드 표 예제</title>
+<style>
+  .grid-table {
+    display: grid;
+    grid-template-columns: repeat(4, 0.5fr);
+    
+  }
+  .grid-header{
+    border: 1px solid #dddddd;
+    text-align: center;
+  }
+   .grid-item {
+  
+    border: 1px solid #dddddd;
+    text-align: left;
+  }
+  .grid-header {
+    background-color: #f9f9f9;
+    font-weight: bold;
+  }
+  .grid-footer {
+    grid-column: 1 / 4;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<h2>구매 목록</h2>
+
+<div class="grid-table">
+  <div class="grid-header">번호</div>
+  <div class="grid-header">상품명</div>
+  <div class="grid-header">수량</div>
+  <div class="grid-header">가격</div>
+
+  <div class="grid-item">1</div>
+  <div class="grid-item">콜라</div>
+  <div class="grid-item">1개</div>
+  <div class="grid-item">1,500원</div>
+
+  <div class="grid-item">2</div>
+  <div class="grid-item">사이다</div>
+  <div class="grid-item">2개</div>
+  <div class="grid-item" style="grid-row: span 2;">1,000원</div>
+
+  <div class="grid-item">3</div>
+  <div class="grid-item">탄산수</div>
+  <div class="grid-item">3개</div>
+  
+
+  <div class="grid-footer grid-item"style="grid-column: span 1;">총 금액</div>
+  <div class="grid-item"style="grid-column: span 3;">6,500원</div>
+</div>
+
+</body>
+</html>

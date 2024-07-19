@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미리보기</title>
+</head>
+<body>
+    
+    <h1>미리보깅 데헷 뀽(☞ﾟヮﾟ)☞ 큥☜(ﾟヮﾟ☜)</h1>
+
+    <input type="file" id="f">
+
+    <div id="img-area">
+        
+    </div>
+</body>
+</html>
+
+<script>
+    
+    const file = document.querySelector("#f");
+    
+    file.onchange = ()=> {
+        
+        if(file.files.length <= 0){
+            document.querySelector("#img-area").innerHTML="";
+            return;
+        }
+
+    //인풋태그에 업로드 된 데이터 읽어오기
+    const fr = new FileReader();
+
+    fr.onload= function(evt){
+        console.log(evt.target.result);
+    
+        //이미지 태그로 데이터 봐주기
+        const imgArea = document.querySelector("#img-area");
+        let str = "";
+        str += `<img src = "${evt.target.result}">`;
+        imgArea.innerHTML= str;
+    };
+    
+    
+    fr.readAsDataURL(file.files[0]);
+
+
+    }   
+</script>

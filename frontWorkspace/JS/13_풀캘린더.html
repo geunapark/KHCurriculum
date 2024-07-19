@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <style>
+        #calendar{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+    <meta charset='UTF-8' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+    <script>
+
+    
+        //화면 준비 완료~
+      document.addEventListener('DOMContentLoaded', function() {
+
+        //달력 셋팅
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+
+        //내가 원하는 작업
+
+        btn = document.querySelector("#changeBtn");
+        btn.addEventListener("click" , ()=>{
+            calendar.changeView('timeGridDay')
+        })
+
+        //내가 원하는 작업 2
+        calendar.addEvent({
+            title : "공부하기",
+            start : "2024-07-04",
+            end : "2024-07-04 15:30",
+        }
+        );
+
+    }); //DOMContentLoaded
+
+
+    </script>
+    <title>캘린더</title>
+  </head>
+  <body>
+    <button id="changeBtn">바꾸기!</button>
+    <div id='calendar'></div>
+  </body>
+</html>

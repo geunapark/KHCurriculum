@@ -1,48 +1,50 @@
 .box{
-  height: 100px;
-  width:  100px;
-  border: 1px solid black;
-  background-color: lightgrey;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border: 1px solid black;
 }
 
 #test-2d:hover{
-  /* transform: translateX(-100px);
-  transform: translateY(100px);
-  transform: translate(100px,100px); */
+    /* transform: translateX(100px); */
+    /* transform: rotateX(45deg); */
+    /* transform: translate(100px,100px); */
+    /* transform: scaleX(2); */
 
-  /* transform: scale(0.5);
-  transform: scaleX(2);
-  transform: scaleY(2); */
+    /* transform: rotateX(90deg); */
+    /* transform: rotateZ(-45deg); */
 
-  /* transform: rotateX(93deg); */
-  /* transform: rotateY(45deg); */
-  /* transform: rotateZ(-45deg); */
+    /* transform: skew(30deg,45deg); */
+     /* transform:  rotate3d(0,1,1,30deg) perspective(300px); */
+     transform: translate3d(0, 1, 1) perspective(300px);
 
-  /* transform: skewX(30deg); */
-  /* transform: skewY(50deg); */
-  /* transform: skew(30deg,45deg); */
+
 }
+/* #test-3d:hover{ */
+      /* transform: perspective(300px)  translate3d(0px,0px,0px);   */
+            /* transform: perspective(300px)  rotate3d(1,0,1,45deg);   */
+                  /* transform: perspective(300px)  scale3d(2,0.5,10);   */
 
-#test-3d:hover{
-  /* transform: perspective(300px) translate3d(0px, 0px ,0px) ; */
-  /* transform: perspective(300px) scale3d(2 , 0.5, 2); */
-  /* transform: perspective(300px) rotate3d(1,0,1,45deg);
-  transform: perspective(300px) skew3d(); */
-}
+
 .box-sm{
-  width: 50px;
-  height: 50px;
-  background-color: darkgray;
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
 }
 
 #test-etc{
-  /* perspective-origin: 300px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    /* perspective-origin: 300px ; */
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
 
 #target:hover{
-  transform-origin: center top;
-  transform: rotate(30deg);
+    /* 축을 바꿔주는게 오리진 */
+    
+/* transform-origin 속성은 요소가 변형되거나 회전할 때의 기준점 */
+/* (origin)을 지정하는 데 사용됩니다. 이 속성을 사용하여  */
+/* 요소의 변형이나 회전의 중심점을 조절할 수 있습니다. */
+    transform-origin: 10% 30%; 
+    transform: rotate(30deg);
 }

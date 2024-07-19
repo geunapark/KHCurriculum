@@ -1,0 +1,22 @@
+
+@media(max-width:3000px){
+    h1{
+        background-color: blue;
+    }
+}
+
+@media (min-width:1023px) {
+h1{
+    background-color: red;
+    /* 가로 사이즈 최대 500까지만 적용이 가능함
+    넘어가면 적용 안됨 */
+}
+}
+
+@media (max-width:767px) {
+    h1{
+        background-color: green;
+    
+    }
+    }
+    

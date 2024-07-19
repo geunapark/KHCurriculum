@@ -1,15 +1,31 @@
 body{
-  background-color: pink
+    background-color: lightgray;
 }
 
 #t01{
-  width: 800px;
-  height: 500px;
-  /* background-color: red; */
-  border: 3px solid black;
-  box-sizing: border-box;
-  background-image:url(../resources/img/이주형.jpg);
-  /* background-repeat: repeat-y; */
-  background-repeat: no-repeat;
-  background-size: cover;
+    width: 800px;
+    height:500px;
+    /* background-color: red; */
+    border: 30px dashed rgb(225, 51, 155);
+    box-sizing: border-box;
+    background-image:url(../resources/img/abc.png);
+    /* background-repeat: repeat-y; */
+    background-repeat: no-repeat;
+    /* 원래 테두리 포함해서 100으로 하겠다인데 
+    이건 컨텐터영역만 그런거고 테두리 영역도 생각해야해서 이대로
+    하면 300짜리칸이 318이되서 안된다 그래서 이떄 사용하는게 박싱사이즈
+    가세포함해서 한다
+     */
+     /* background-size: auto; */
+     /* background-size: contain; */
+     /* background-size:cover ; */
+     /* background-size:700px 400px ; */
+     /* background-size: 100% 100%; */
+     /* background-position: right top; */
+    /* background-position: center center; */
+    /* background-position: 50% 50%; */
+    /* background-origin:padding-box ; */
+    /* background-origin:content-box ; */
+    /* background-origin: border-box; */
+    
 }

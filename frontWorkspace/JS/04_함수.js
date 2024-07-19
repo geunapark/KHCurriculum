@@ -1,69 +1,78 @@
+
 //선언적 함수
 function f01(x) {
-  //console.log("f01 called...");
-  return x+1;
+    return x+1;
 }
 
-//익명함수
-const f02 = function (x) {
-  //console.log("anonymous called,,,");
-  return x+1;
+//익명 함수 
+const f02= function(x) {
+    return x+1;
 }
-
 
 //화살표 함수
-const f03 = (x) => x+1;
-/*
-const f03 = (x) => {return x+1;} 이랑 같다
-*/
+const f03 = x =>  x+1;
+//const f03 = (x) => {return x+1;}  같다 
 
-
-// result01 = f01(10);
-// result02 = f02(10);
-// result03 = f03(10);
+// result01 =f01(10);
+// result02 =f02(10);
+// result03 =f03(10);
 
 // console.log(result01);
 // console.log(result02);
 // console.log(result03);
 
-//=================================================
+const printNum=function(x) {
+    console.log(x);
+    console.log(arguments);
+} // 함수도 변수에 담을수 있다 
 
-const printNum =function(x) {
-  console.log(x);
-  console.log(arguments);
-}
+//printNum(100,200,300);
 
-// printNum(100 ,200,300);
+f01();
 
-//=================================================
+f02();
 
-function getTen() {
-  return printNum
-}
+f03();
 
-// const result = getTen();
+// ==================================
+
+ function getTen() {
+     return printNum;
+ }
+
+ const result = getTen();
 // console.log(result);
 
+// result(777);
 
-//=====================================
-function hello() {
-  console.log("안녕~~~");
-}
-// const hi = hello;
-// hi();
-// console.log(hi);
+//=====================
 
-// const x = undefined;
-// console.log(typeof x);
+// function hello (){
+//     console.log("안녕~~");
+// }
 
-// console.log(3/0);
-// const calcResult = 3/0;
-// const isFiniteResult = isFinite (calcResult)
+// const hi =hello(); //()붙이면 안됨 
+
+// const x=undefined;
+// console.log( typeof x);
+
+//======================
+
+
+
+
+console.log(3/0);
+//const calcResult =3/2; //1.5==일반적인 숫자==finite==인피니티아님
+// const calcResult =3/0; //infinity
+// const isFiniteResult = isFinite(calcResult);
 // console.log(isFiniteResult);
 
-// const calcResult = 1 / "hello" ;
-// console.log(isNaN(calcResult));
+//--nan
+// const calcResult =1/"hello"; //nan 숫자가 아닌
+// console.log(isNaN(calcResult)); 
 
-console.log(0 == "0");
-console.log(0 == [] );
-console.log("0" == []);
+
+
+
+
+

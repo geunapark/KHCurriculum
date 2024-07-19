@@ -1,4 +1,76 @@
-#target{
-  color: pink;
-  font-size: 0.7em;
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    background-color: rgb(230, 243, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrap{
+    width: 600px;
+    height: 700px;
+   background-color: #ffe1e1;
+   font-size: 1.5em;
+   display: grid;
+   grid-template-columns:1fr 3fr ;
+   grid-template-rows: 1fr 1fr 1fr 4fr;
+   justify-items: center;
+   align-items: center;
+}
+
+#wrap input{
+    width: 80%;
+    background-color:  #ffe1e1;
+    border: 0px;
+    border-bottom: 1px dashed black;
+}
+
+#wrap > div:nth-child(4),
+#wrap >div:nth-child(6){
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrap > div:nth-child(4) >div{
+    color: white;
+    /* css는 부모한테 있는게 자식까지 영향이 미쳐서 부모폰트사이즈에 따라
+    자식 요소에도 영향을 끼쳐서 원래대로 수정  */
+    font-size: 0.5em;
+    /* em현재 자기가 주어진 사이즈에 몇배를 주겠다 
+    기본 폰트 사이즈 16px 
+    지금 할당된 사이즈가 32px이라 32로 지정됨 다시 16으로 하고 싶으면
+    맨 처음 설정된 루트값으로 정해진 16px로 지정하거나 그러니까
+    현재 주어진 거에 0.5em을 하거나 루트기준 1배로 지정하라 1rem
+    내가 원하는 사이즈에 맞게 */
+    
+    
+}
+#pwdText, #pwdCheckText{
+    visibility: hidden;
+}
+#pwdText.active,#pwdCheckText.active{
+    visibility: visible;
+}
+
+#wrap >div:last-child {
+    width: 100%;
+    height: 100%;
+    grid-column: span 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+}
+
+#wrap > div:last-child >button{
+    width: 80%;
+    height: 20%;
+    background-color: pink;
+    border: 0px;
+    margin-bottom:20px;
 }
