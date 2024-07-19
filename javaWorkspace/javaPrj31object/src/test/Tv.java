@@ -1,9 +1,9 @@
 package test;
 
 public class Tv {
-	//데이터
+	
+	//데이터 
 	int channel;
-	int volume;
 	String brand;
 	int size;
 	double weight;
@@ -14,7 +14,6 @@ public class Tv {
 	int price;
 	
 	//기능
-	
 	public void channelUp() {
 		channel++;
 		System.out.println("채널 올림");
@@ -24,5 +23,9 @@ public class Tv {
 		System.out.println("채널 내림");
 	}
 	
-
+	
+	
+	
+	
+	
 }

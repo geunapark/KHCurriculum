@@ -1,0 +1,11 @@
+package main;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		RecursionTest rc = new RecursionTest();
+		rc.m01(0);
+	}
+
+}

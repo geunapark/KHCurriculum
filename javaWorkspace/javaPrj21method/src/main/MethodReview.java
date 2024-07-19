@@ -1,9 +1,10 @@
 package main;
 
 public class MethodReview {
+	
 	public void m01() {
 		System.out.println("메소드01 시작 ~~~");
-		m02();
+		m01();
 		System.out.println("메소드01 종료 ~~~");
 	}
 	
@@ -17,5 +18,12 @@ public class MethodReview {
 		System.out.println("메소드03 시작 ~~~");
 		System.out.println("메소드03 종료 ~~~");
 	}
-	
+
 }
+
+
+
+
+		
+		
+		

@@ -1,15 +1,15 @@
 package test;
 
 public class Computer {
-	String name;
-	String brand;
-	int price;
-	double weight;
-	String cpu;
-	String core;
-	String serierNum;
-	int size;
+	
+	String modelName;
 	int ram;
 	boolean as;
+	int size;
+	int SSD;
+	int pixelVersion;
+	String io;
+	
+	
 	
 }

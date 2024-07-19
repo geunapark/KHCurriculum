@@ -1,12 +1,15 @@
 package test;
 
 public class Person {
+	
+	public Person(String name , int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
 	private String name;
 	private int age;
-	public Person(String name,int age) {
-		this.name=name;
-		this.age=age;
-	}
+	
 	
 	public String getName() {
 		return name;
@@ -21,8 +24,9 @@ public class Person {
 		this.age = age;
 	}
 	
-	public String toString() {
-		String str="name : "+this.name+"\n"+"age : "+this.age;
+	public String toString(){
+		String str = "name : " + name + "," + " age : "+ age;
 		return str;
 	}
+	
 }

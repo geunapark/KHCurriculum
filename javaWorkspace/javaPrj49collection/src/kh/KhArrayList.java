@@ -9,41 +9,32 @@ public class KhArrayList {
 	public void add(Object data) {
 		checkCnt();
 		dataArr[cnt++] = data;
-
 	}
 
 	public void add(int idx, Object data) {
-
 		if (idx < 0 || idx > cnt) {
-			System.out.println("잘못된 인덱스 값 입니다");
+			System.out.println("잘못된 인덱스 값....");
 			return;
 		}
-
-		checkCnt();
-
-		for (int i = cnt; i > idx; i--) { //뒤로 한칸씩 밀어주는거임
+			checkCnt();
+		for (int i = cnt; i > idx; i--) {
 			dataArr[i] = dataArr[i - 1];
 		}
 		dataArr[idx] = data;
 		cnt++;
-
-	}// 메소드
-		// dataArr[idx] = data;
+	}
 
 	private void checkCnt() {
-
 		if (capacity == cnt) {
-			increatArray();
+			increaseArray();
 		}
 	}
 
 	public Object get(int idx) {
-
 		return dataArr[idx];
+	}
 
-	}// 메소드
-
-	private void increatArray() {
+	private void increaseArray() {
 		capacity *= 2;
 		Object[] newArr = new Object[capacity];
 
@@ -52,7 +43,6 @@ public class KhArrayList {
 		}
 
 		dataArr = newArr;
-
 	}
 
 	public int size() {
@@ -62,20 +52,17 @@ public class KhArrayList {
 	public void clear() {
 		for (int i = 0; i < cnt; i++) {
 			dataArr[i] = null;
-
 		}
 		cnt = 0;
-
 	}
 
 	public void remove(int idx) {
 		dataArr[idx] = null;
-
 		for (int i = idx; i < cnt - 1; i++) {
 			dataArr[i] = dataArr[i + 1];
 		}
-		cnt--;
 
+		cnt--;
 	}
 
 }

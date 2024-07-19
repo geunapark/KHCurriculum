@@ -1,15 +1,26 @@
 package bank;
 
 public class Account {
-	private String name;	//예금주
-	private String pwd;		//비밀번호
-	private String number;	//계좌번호
-	private int balance;	//잔액
-	private int failCnt;	//비밀번호 실패 횟수
-	private int limit;		//출금,이체 한도
+	
+	public Account(String name , String pwd) {
+		this.name = name;
+		this.pwd = pwd;
+	}
+	public Account(String name , String pwd, int limit) {
+		this.name = name;
+		this.pwd = pwd;
+		this.limit = limit;
+	}
+	
 	public Account() {
+		double x = Math.random()* 9000000000L +1000000000;
+		long result = (int)x;
+		this.number = result + "";
+		//String.valueOf(result); 도 가능
+		
 	}
 	public Account(String name, String pwd, String number, int balance, int failCnt, int limit) {
+		
 		this.name = name;
 		this.pwd = pwd;
 		this.number = number;
@@ -17,15 +28,13 @@ public class Account {
 		this.failCnt = failCnt;
 		this.limit = limit;
 	}
-	public Account(String name, String pwd,int limit) {
-		this.name = name;
-		this.pwd = pwd;
-		this.limit=limit;
-	}
-	public Account(String name, String pwd) {
-		this.name = name;
-		this.pwd = pwd;
-	}
+	private String name;
+	private String pwd;
+	private String number; //계좌번호
+	private int balance; //잔액
+	private int failCnt; //비밀번호 실패 횟수
+	private int limit; //출금, 이체 한도
+	
 	public String getName() {
 		return name;
 	}
@@ -62,11 +71,14 @@ public class Account {
 	public void setLimit(int limit) {
 		this.limit = limit;
 	}
+	
+	
 	public String toString() {
 		return "Account [name=" + name + ", pwd=" + pwd + ", number=" + number + ", balance=" + balance + ", failCnt="
 				+ failCnt + ", limit=" + limit + "]";
 	}
 	
 	
-
+	
+	
 }

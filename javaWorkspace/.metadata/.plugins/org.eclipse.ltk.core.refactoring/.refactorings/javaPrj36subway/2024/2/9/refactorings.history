@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;subway.subwaySystem&apos; to &apos;SubwaySystem&apos;&#x0D;&#x0A;- Original project: &apos;javaPrj36subway&apos;&#x0D;&#x0A;- Original element: &apos;subway.subwaySystem&apos;&#x0D;&#x0A;- Renamed element: &apos;subway.SubwaySystem&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;subwaySystem&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;subway{subwaySystem.java[subwaySystem" matchStrategy="1" name="SubwaySystem" qualified="false" references="true" similarDeclarations="false" stamp="1709001222308" textual="false" version="1.0"/>
+</session>

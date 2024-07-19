@@ -1,25 +1,19 @@
 package main;
-
 import java.util.Scanner;
-
 public class Main05 {
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		System.out.println("100이하의 자연수 n룰 입력해주세요");
-		int n=sc.nextInt();
-		int sum=0;
 		
-		if(n>100) {
-			System.out.println("100초과입니다.");
-			return;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("100 이하의 자연수 n을 입력하시오 > ");
+		int x = sc.nextInt();
+		int sum = 0;
+		for(int i = 1; i <=x; i++) {
+			sum = i +sum;
 		}
+		System.out.println(sum);
 		
-		for(int i=1;i<=n;i++) {
-			
-			sum+=i;
-		}
-		System.out.println("1~"+n+" 까지의 총합은 : "+sum);
+		
 	}
 
 }

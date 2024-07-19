@@ -6,12 +6,10 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		
-		ApiTest x = new ApiTest();
-		x.test01();
-				
-			
-				
+		System.out.println("==== api ====");
+
+		ApiTest apiTest = new ApiTest();
+		apiTest.test01();
 	}
 
 }

@@ -1,17 +1,23 @@
 package test;
 
 public class Pokemon {
+	
+	public Pokemon() {
+		
+		
+	}
+	
+	//인자값을 전부 받는 생성자
+	public Pokemon(String name,int hp,int atk) {
+		this.name = name;
+		this.hp = hp;
+		this.atk = atk;
+	}
+	
 	private String name;
 	private int hp;
 	private int atk;
-	public Pokemon() {
-		
-	}
-	public Pokemon(String name,int hp,int atk) {
-		this.name=name;
-		this.hp=hp;
-		this.atk=atk;
-	}
+	
 	public String getName() {
 		return name;
 	}
@@ -30,10 +36,10 @@ public class Pokemon {
 	public void setAtk(int atk) {
 		this.atk = atk;
 	}
+	
 	public String toString() {
 		return "Pokemon [name=" + name + ", hp=" + hp + ", atk=" + atk + "]";
 	}
-	
-	
 
+	
 }

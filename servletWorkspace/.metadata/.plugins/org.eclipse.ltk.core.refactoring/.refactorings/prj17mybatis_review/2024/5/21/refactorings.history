@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.kh.app.boardController&apos; to &apos;com.kh.app.board.Controller&apos;&#x0D;&#x0A;- Original project: &apos;prj17mybatis_review&apos;&#x0D;&#x0A;- Original element: &apos;prj17mybatis_review/src/main/java/com.kh.app.boardController&apos;&#x0D;&#x0A;- Renamed element: &apos;prj17mybatis_review/src/main/java/com.kh.app.board.Controller&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.kh.app.boardController&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.kh.app.boardController" name="com.kh.app.board.Controller" qualified="false" references="true" stamp="1716269452966" textual="false" version="1.0"/>
+</session>

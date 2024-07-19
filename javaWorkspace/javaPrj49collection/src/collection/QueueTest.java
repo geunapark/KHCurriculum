@@ -7,10 +7,8 @@ public class QueueTest {
 
 	public void method01() {
 		
-		
-		//생성
-		Queue x= new LinkedList();
-		
+		// 생성
+		Queue x = new LinkedList();
 		
 		//넣기
 		x.add("one");
@@ -19,12 +17,10 @@ public class QueueTest {
 		
 		
 		
-		System.out.println(x.poll());
-		System.out.println(x.poll());
-		System.out.println(x.poll());
+		//꺼내기
+		System.out.println(x.poll()); 
+		System.out.println(x.poll()); 
+		System.out.println(x.poll()); 
 		
 	}
-	
-	
-	
 }

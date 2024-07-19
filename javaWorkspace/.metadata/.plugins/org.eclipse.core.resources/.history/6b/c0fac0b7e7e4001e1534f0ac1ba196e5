@@ -1,0 +1,12 @@
+package main;
+
+public class RecursionTest {
+
+	public void m01(int n) {
+		System.out.println(n);
+		if (n == 10)
+			return;
+
+		m01(n + 1);
+	}
+}

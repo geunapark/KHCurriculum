@@ -10,8 +10,8 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class ClientMain {
-	
-	public static String nick;
+
+public static String nick;
 	
 	public static void main(String[] args) {
 		

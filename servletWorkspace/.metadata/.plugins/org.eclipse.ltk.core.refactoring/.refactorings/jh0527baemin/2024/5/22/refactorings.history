@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;jh0527baemin&apos;&#x0D;&#x0A;- Original project: &apos;jh0527baemin&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     jstl-1.2.jar&#x0D;&#x0A;     mybatis-3.5.16.jar&#x0D;&#x0A;     ojdbc11.jar" description="Delete elements" element1="src/main/webapp/WEB-INF/lib/jstl-1.2.jar" element2="src/main/webapp/WEB-INF/lib/ojdbc11.jar" element3="src/main/webapp/WEB-INF/lib/mybatis-3.5.16.jar" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="3" stamp="1716792975554" subPackages="false" version="1.0"/>
+</session>

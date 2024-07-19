@@ -1,10 +1,56 @@
-.+/*
+/*
     <GROUP BY>
         그룹 기준을 제시할 수 있는 구문
         여러 개의 값들을 하나의 그룹으로 묶어서 처리할 목적으로 사용한다.
-        SELECT보다 먼저 동작함
 */
 
+--부서별 급여 합계
+-- 단,보너스가 없는 사원들만
+SELECT 
+    DEPT_CODE       부서
+    ,SUM(SALARY)    급여합계
+FROM EMPLOYEE
+WHERE BONUS IS NULL
+GROUP BY DEPT_CODE
+ORDER BY DEPT_CODE
+;
+
+
+--전체 급여 총합 조회
+SELECT SUM(SALARY)
+FROM EMPLOYEE;
+--각 부서별 급여 총합 조회
+SELECT DEPT_CODE , SUM(SALARY)
+FROM EMPLOYEE
+GROUP BY DEPT_CODE;
+--전체 사원 수 조회
+SELECT COUNT(EMP_NAME)
+FROM EMPLOYEE;
+-- 각 부서별 사원 수 조회
+SELECT DEPT_CODE ,COUNT(EMP_NAME)
+FROM EMPLOYEE
+GROUP BY DEPT_CODE;
+--각 부서별 보너스를 받는 사원 수
+SELECT DEPT_CODE ,COUNT(EMP_NAME)
+FROM EMPLOYEE
+WHERE BONUS IS NULL
+GROUP BY DEPT_CODE;
+--각 직급별 급여 평균 조회
+SELECT JOB_CODE , AVG(SALARY)
+FROM EMPLOYEE
+GROUP BY JOB_CODE;
+-- 부서별 사원수, 보너스를 받는 사원수, 급여의 합, 평균 급여, 최고 급여, 최저 급여 조회
+SELECT DEPT_CODE, COUNT(EMP_NAME),COUNT(BONUS),SUM(SALARY),AVG(SALARY)
+,MAX(SALARY),MIN(SALARY)
+FROM EMPLOYEE
+GROUP BY DEPT_CODE;
+
+--성별 별 사원수 조회
+SELECT SUBSTR (EMP_NO, 8,1) AS "성별 코드",
+COUNT(*) AS 사원수
+FROM EMPLOYEE
+GROUP BY SUBSTR(EMP_NO,8,1)
+ORDER BY "성별 코드";
 
 /*
     <HAVING>
@@ -15,100 +61,46 @@
         1: FROM        조회하고자 하는 테이블명
         2: WHERE       조건식
         3: GROUP BY    그룹 기준에 해당하는 칼럼명 | 계산식 | 함수식
-        4: HAVING      그룹에 대한 조건식
+        4: HAVING      그룹에 대한 조건식(GROUP이 없으면 X)
         6: ORDER BY    정렬 기준에 해당하는 칼럼명 | 별칭 | 칼럼 순번
 */
 
+--각 부서별 평균 급여 조회
 SELECT 
-    DEPT_CODE
-    , SUM(SALARY)
+DEPT_CODE   부서
+,FLOOR(AVG(SALARY)) || '원' "평균 급여"
 FROM EMPLOYEE
 GROUP BY DEPT_CODE;
 
--- 전체 급여 총합 조회
-SELECT 
-    SUM(SALARY)
-FROM EMPLOYEE;
-
--- 각 부서별 급여 총합 조회
-SELECT 
-    DEPT_CODE
-    , SUM(SALARY)
-FROM EMPLOYEE
-GROUP BY DEPT_CODE;
-
--- 전체 사원 수 조회
-SELECT
-   COUNT(EMP_ID)
-FROM EMPLOYEE;
-
--- 각 부서별 사원 수 조회
-SELECT DEPT_CODE
-        ,COUNT(EMP_ID) AS 사원수
-FROM EMPLOYEE
-GROUP BY DEPT_CODE;
-
-    
-
--- 각 부서별 보너스를 받는 사원수
-SELECT DEPT_CODE
-        ,COUNT(BONUS)
-FROM EMPLOYEE
-GROUP BY DEPT_CODE;
-        
-
--- 각 직급별 급여 평균 조회
-SELECT JOB_CODE
-    ,AVG(SALARY)
-FROM EMPLOYEE
-GROUP BY JOB_CODE;
-    
-
--- 부서별 사원수, 보너스를 받는 사원수, 급여의 합, 평균 급여, 최고 급여, 최저 급여 조회
-SELECT DEPT_CODE AS 부서
-        ,COUNT(EMP_ID) AS 사원수
-        ,COUNT(BONUS) AS 보너스
-        ,SUM(SALARY)  AS 급여
-        ,FLOOR(AVG(SALARY))  AS 평균급여
-        ,MAX(SALARY) AS 최고급여
-        ,MIN(SALARY) AS 최저급여
+--부서 평균 급여가 300만원 이상인 경우만 조회
+SELECT DEPT_CODE , FLOOR(AVG(SALARY))  || '원'
 FROM EMPLOYEE
 GROUP BY DEPT_CODE
-ORDER BY DEPT_CODE;
+HAVING FLOOR(AVG(SALARY)) >=3000000;
 
---성별별로 사원수 조회
-SELECT SUBSTR(EMP_NO, 8, 1) AS "성별 코드",
-       COUNT(*) AS "사원수"
+-- 직급별  총 급여의 합이 10000000 이상인 직급들만 조회
+SELECT JOB_CODE , SUM(SALARY)
 FROM EMPLOYEE
-GROUP BY SUBSTR(EMP_NO, 8, 1)
-ORDER BY "성별 코드"
-;
+GROUP BY JOB_CODE
+HAVING SUM(SALARY)>=10000000;
+-- 부서별 보너스를 받는 사원이 없는 부서들만 조회
 
---보너스를 받지 않는 사원들을 대상으로
+--보너스를 받지 않는 사원들을 대상으로 
 --부서별 평균 급여를 조회
 --(평균급여가 300만원 이상인 부서는 제외)
---(평균급여가 높은 순서대로 정령)
-
+--(평균급여가 높은 순서대로 정렬)
 SELECT 
     DEPT_CODE
     ,FLOOR(AVG(SALARY)) 평균급여
 FROM EMPLOYEE
 WHERE BONUS IS NULL
-HAVING AVG(SALARY) <= 3000000
 GROUP BY DEPT_CODE
-ORDER BY FLOOR(AVG(SALARY))DESC;
+HAVING AVG(SALARY) < 3000000 --별칭 적용이 되지않은 이유는 '실행순서'때문!
+ORDER BY 평균급여 DESC
+;
 
 
---보너스를 받는 사원들의 모든 코드를 조회
---대신 급여가 3000000만원 이상인 사람들만
-
-SELECT *
-FROM EMPLOYEE
-WHERE BONUS IS NOT NULL
-    AND SALARY >= 3000000;
-    
---
-  /*
+/*
     <집계 함수>
         그룹별 산출한 결과 값의 중간 집계를 계산 해주는 함수
 */
@@ -160,24 +152,25 @@ ORDER BY DEPT_CODE, JOB_CODE;
         MINUS       : 선행 쿼리의 결과값에서 후행 쿼리의 결과값을 뺀 나머지 결과값만 추출한다. (차집합)
 */
 
---부서코드가 D5인 사원들 조회
-SELECT EMP_ID,EMP_NAME , DEPT_CODE ,SALARY
+-- 부서코드 D5 인 사원들 조회 (6명)
+SELECT EMP_ID , EMP_NAME ,DEPT_CODE ,SALARY
 FROM EMPLOYEE
-WHERE DEPT_CODE = 'D5';
+WHERE DEPT_CODE ='D5'
+;
 
---급여가 300만원 초과인 사원들 조회
-SELECT EMP_ID,EMP_NAME , DEPT_CODE ,SALARY
-FROM EMPLOYEE
-WHERE DEPT_CODE = 'D5'
-INTERSECT
-SELECT EMP_ID,EMP_NAME , DEPT_CODE ,SALARY
-FROM EMPLOYEE
-WHERE SALARY > 3000000;
-
---부서코드가 D5이면서 급여가 300만원초과
-SELECT EMP_ID,EMP_NAME , DEPT_CODE ,SALARY
+--급여가 300만원 초과인 사원들 조회 (8명)
+SELECT EMP_ID , EMP_NAME ,DEPT_CODE ,SALARY
 FROM EMPLOYEE
 WHERE SALARY > 3000000
-OR DEPT_CODE = 'D5';
-    
+;
+
+-- 부서코드가 D5인 사원 또는 급여가 300만원 초과인 사원
+SELECT EMP_ID , EMP_NAME ,DEPT_CODE ,SALARY
+FROM EMPLOYEE
+WHERE DEPT_CODE ='D5'
+MINUS
+SELECT EMP_ID , EMP_NAME ,DEPT_CODE ,SALARY
+FROM EMPLOYEE
+WHERE SALARY > 3000000
+;
 

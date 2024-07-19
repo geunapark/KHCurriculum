@@ -1,6 +1,6 @@
 package car.vo;
 
-public class Avante extends Car implements CarAction {
+public class Avante extends Car implements CarAction  {
 
 	@Override
 	public void go() {
@@ -9,8 +9,7 @@ public class Avante extends Car implements CarAction {
 
 	@Override
 	public void stop() {
-		System.out.println("아반떼 정지 ! ! !");
+		System.out.println("아반떼 멈춤 !!!");
 	}
 
-	
 }

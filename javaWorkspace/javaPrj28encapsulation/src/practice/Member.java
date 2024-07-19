@@ -1,14 +1,14 @@
 package practice;
 
 public class Member {
+	
 	private String id;
 	private String pwd;
 	private String nickName;
-	private String birthYear;
+	private int birthYear;
 	private String email;
 	private String address;
 	private char gender;
-	
 	public String getId() {
 		return id;
 	}
@@ -27,10 +27,10 @@ public class Member {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
-	public String getBirthYear() {
+	public int getBirthYear() {
 		return birthYear;
 	}
-	public void setBirthYear(String birthYear) {
+	public void setBirthYear(int birthYear) {
 		this.birthYear = birthYear;
 	}
 	public String getEmail() {
@@ -51,6 +51,10 @@ public class Member {
 	public void setGender(char gender) {
 		this.gender = gender;
 	}
+	
+	
+
+	
 	
 	
 

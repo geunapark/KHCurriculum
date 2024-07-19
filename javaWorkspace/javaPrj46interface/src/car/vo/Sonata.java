@@ -1,6 +1,6 @@
 package car.vo;
 
-public class Sonata extends Car implements CarAction {
+public class Sonata extends Car  implements CarAction {
 
 	@Override
 	public void go() {
@@ -9,12 +9,7 @@ public class Sonata extends Car implements CarAction {
 
 	@Override
 	public void stop() {
-		System.out.println("소나타 정지 ! ! !");
+		System.out.println("소나타 멈춤 !!!");
 	}
-	
 
-	
-	
-
-	
 }

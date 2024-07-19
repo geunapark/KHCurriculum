@@ -1,22 +1,17 @@
 package main;
-
 import java.util.Scanner;
-
 public class Main07 {
 
 	public static void main(String[] args) {
 		
-		Scanner sc=new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("정수 n을 입력하시오 > ");
+		int n = sc.nextInt();
 		
-		System.out.print("정수 n을 입력하세요 : ");
-		int n=sc.nextInt();
-		
-		for(int i=0;i<n;i++) {
+		for(int i = 0;i <n;i++) {
 			System.out.print("*");
 		}
 		
-		  
-		 
 	}
 
 }

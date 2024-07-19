@@ -1,15 +1,21 @@
 package test;
 
 public class Person {
-	private String name;
-	private int age;
-	public Person() {
+	
+	public Person(){
+		
 		
 	}
-	public Person(String name,int age) {
-		this.name=name;
-		this.age=age;
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
 	}
+	
+	private String name;
+	private int age;
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -22,9 +28,14 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public String toString() {
-		
-		return "[Person] 클래스\n"+"이름 : "+this.name+"\n"+"나이 : "+this.age;
+	
+	public String toSting() { 
+		return "[Person]name : "+ name +" , "+ "age : "+ age;
 	}
+	
+	
+	
+	
+	
 	
 }

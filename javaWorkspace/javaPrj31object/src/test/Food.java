@@ -1,15 +1,17 @@
 package test;
 
 public class Food {
-	int price;
-	int cnt;
-	String name;
-	boolean isRecommend;
-	boolean soldOut;
-	int hot;
-	String origin;
-	String ingredient;
-	char type;//k,m,r
 	
-
+	//data
+	public int price;
+	public int cnt;
+	public String name;
+	public boolean isRecommend;
+	public boolean isSoldout;
+	public int hot;
+	public String origin;
+	public String ingredient;
+	public char type;//k,m,r,
+	
+	
 }

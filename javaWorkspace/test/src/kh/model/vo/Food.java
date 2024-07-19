@@ -1,0 +1,36 @@
+package kh.model.vo;
+
+public class Food {
+
+
+	public Food() {
+	}
+
+	public Food(String name, int kcal) {
+		this.name = name;
+		this.kcal = kcal;
+	}
+	private String name;
+	private int kcal;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getKcal() {
+		return kcal;
+	}
+
+	public void setKcal(int kcal) {
+		this.kcal = kcal;
+	}
+
+	@Override
+	public String toString() {
+		return "Food [name=" + name + ", kcal=" + kcal + "]";
+	}
+}

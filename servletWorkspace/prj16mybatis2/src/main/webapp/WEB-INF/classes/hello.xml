@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 이 XML 파일은 MyBatis 매퍼 파일로, BoardMapper 네임스페이스를 정의하는 SQL 쿼리를 포함하고 있습니다. -->
+
+<mapper namespace="BoardMapper">
+  
+  <!-- 이 부분은 BOARD_TEMP 테이블에 새로운 게시물을 추가하는 SQL insert 문입니다. -->
+  <insert id="insertBoard">
+    INSERT INTO BOARD_TEMP(TITLE, CONTENT) 
+    <!-- 이 샵 기호(#)는 MyBatis의 플레이스홀더 문법입니다. 이것은 MyBatis가 SQL 문을 실행할 때 파라미터 값을 채우는 방법을 나타냅니다. -->
+    VALUES(#{title}, #{content})
+  </insert>
+  
+  <!-- 이 부분은 BOARD_TEMP 테이블에서 게시물 제목과 내용을 가져오는 SQL select 문입니다. -->
+  <select id="selectBoardList" resultType="BoardVo">
+    SELECT TITLE, CONTENT 
+    FROM BOARD_TEMP 
+  </select>
+  
+</mapper>

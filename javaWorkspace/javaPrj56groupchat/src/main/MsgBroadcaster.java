@@ -3,7 +3,6 @@ package main;
 import java.io.PrintWriter;
 
 public class MsgBroadcaster extends Thread implements Runnable {
-	
 	@Override
 	public void run() {
 		
@@ -22,3 +21,4 @@ public class MsgBroadcaster extends Thread implements Runnable {
 	}//run
 
 }//class
+

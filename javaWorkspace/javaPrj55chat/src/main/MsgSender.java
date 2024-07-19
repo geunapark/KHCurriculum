@@ -5,31 +5,31 @@ import java.util.Scanner;
 
 public class MsgSender extends Thread implements Runnable {
 
-   private Scanner sc;
-   private PrintWriter pw;
+	private Scanner sc;
+	private PrintWriter pw;
 
-   public MsgSender(Scanner sc, PrintWriter pw) {
-      this.sc = sc;
-      this.pw = pw;
-   }
+	public MsgSender(Scanner sc, PrintWriter pw) {
+		this.sc = sc;
+		this.pw = pw;
+	}
 
-   @Override
-   public void run() {
-      while (true) {
-         // 유저한테 입력받기
-         System.out.println("[YOU] : ");
-         String InputMsg = sc.nextLine();
+	@Override
+	public void run() {
+		while (true) {
+			// 유저한테 입력받기
+			System.out.println("[YOU] : ");
+			String InputMsg = sc.nextLine();
 
-         // 발신
-         pw.println(InputMsg);
-         pw.flush();
-         
-         try {
-			Thread.sleep(1);
-		} catch (InterruptedException e) {
-			System.out.println("잠든 쓰레드....잘자....");
+			// 발신
+			pw.println(InputMsg);
+			pw.flush();
+
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				System.out.println("잠든 쓰레드 방해한듯..");
+			}
 		}
-      }
-   }
+	}
 
 }

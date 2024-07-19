@@ -1,8 +1,7 @@
 package car;
 
 public interface CarActionGasoline extends CarAction {
-	
-	public abstract void goGosoline();
 
-	
+	public abstract void goGasoline();
+
 }

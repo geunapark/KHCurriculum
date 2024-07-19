@@ -1,0 +1,14 @@
+1714102308900	Rename type 'd'
+1714102321597	Rename type 'd'
+1714102334804	Rename type 'd'
+1714102646065	Move 'join2.jsp' to 'member'
+1714102651409	Move 'join.jsp' to 'member'
+1714102653299	Move 'login2.jsp' to 'member'
+1714102688378	Rename resource 'login.jsp'
+1714102693383	Delete element
+1714102698117	Delete element
+1714103161904	Rename type 'memberJoinController'
+1714103167460	Rename type 'memberJoinController2'
+1714103173107	Rename type 'memberLoginController'
+1714103179222	Rename type 'memberLoginController2'
+1714103190597	Rename type 'memberVo'
